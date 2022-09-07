@@ -1,0 +1,606 @@
+Recognizer3D(
+  64.408 M, 53.114% Params, 100.955 GFLOPs, 100.000% FLOPs, 
+  (backbone): TimeSformer(
+    64.404 M, 53.111% Params, 100.955 GFLOPs, 100.000% FLOPs, 
+    (patch_embed): PatchEmbed(
+      0.591 M, 0.487% Params, 0.926 GFLOPs, 0.917% FLOPs, 
+      (projection): Conv2d(0.591 M, 0.487% Params, 0.926 GFLOPs, 0.917% FLOPs, 3, 768, kernel_size=(16, 16), stride=(16, 16))
+    )
+    (drop_after_pos): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+    (drop_after_time): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+    (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+    (transformer_layers): TransformerLayerSequence(
+      63.812 M, 52.622% Params, 100.027 GFLOPs, 99.080% FLOPs, 
+      (layers): ModuleList(
+        63.812 M, 52.622% Params, 100.027 GFLOPs, 99.080% FLOPs, 
+        (0): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (1): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (2): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (3): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (4): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (5): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (6): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (7): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (8): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (9): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (10): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+        (11): BaseTransformerLayer(
+          5.318 M, 4.385% Params, 8.336 GFLOPs, 8.257% FLOPs, 
+          (attentions): ModuleList(
+            0.594 M, 0.490% Params, 0.93 GFLOPs, 0.921% FLOPs, 
+            (0): DividedTemporalAttentionWithNorm(
+              0.592 M, 0.488% Params, 0.927 GFLOPs, 0.918% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (temporal_fc): Linear(0.591 M, 0.487% Params, 0.925 GFLOPs, 0.916% FLOPs, in_features=768, out_features=768, bias=True)
+            )
+            (1): DividedSpatialAttentionWithNorm(
+              0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, 
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+              (attn): MultiheadAttention(
+                0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+                (out_proj): _LinearWithBias(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=768, bias=True)
+              )
+              (proj_drop): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+            )
+          )
+          (ffns): ModuleList(
+            4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+            (0): FFNWithNorm(
+              4.724 M, 3.896% Params, 7.406 GFLOPs, 7.336% FLOPs, 
+              (activate): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (layers): Sequential(
+                4.722 M, 3.894% Params, 7.403 GFLOPs, 7.333% FLOPs, 
+                (0): Sequential(
+                  2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, 
+                  (0): Linear(2.362 M, 1.948% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=768, out_features=3072, bias=True)
+                  (1): GELU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+                  (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+                )
+                (1): Linear(2.36 M, 1.946% Params, 3.702 GFLOPs, 3.667% FLOPs, in_features=3072, out_features=768, bias=True)
+                (2): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.0, inplace=False)
+              )
+              (dropout_layer): DropPath(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+              (norm): LayerNorm(0.002 M, 0.001% Params, 0.002 GFLOPs, 0.002% FLOPs, (768,), eps=1e-06, elementwise_affine=True)
+            )
+          )
+          (norms): ModuleList(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+        )
+      )
+    )
+  )
+  (cls_head): TimeSformerHead(
+    0.005 M, 0.004% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+    (loss_cls): CrossEntropyLoss(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+    (fc_cls): Linear(0.005 M, 0.004% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=768, out_features=6, bias=True)
+  )
+)
+==============================
+Input shape: (1, 3, 8, 224, 224)
+Flops: 100.96 GFLOPs
+Params: 121.26 M
+==============================
+

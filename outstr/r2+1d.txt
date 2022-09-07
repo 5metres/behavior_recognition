@@ -1,0 +1,511 @@
+ configs/recognition/r2plus1d/r2plus1d.py --shape 1 3 16 224 224
+Recognizer3D(
+  63.557 M, 100.000% Params, 81.509 GFLOPs, 100.000% FLOPs, 
+  (backbone): ResNet2Plus1d(
+    63.554 M, 99.995% Params, 81.509 GFLOPs, 100.000% FLOPs, 
+    (conv1): ConvModule(
+      0.028 M, 0.045% Params, 5.736 GFLOPs, 7.037% FLOPs, 
+      (conv): Conv2plus1d(
+        0.028 M, 0.045% Params, 5.697 GFLOPs, 6.990% FLOPs, 
+        (conv_s): Conv3d(0.012 M, 0.019% Params, 2.449 GFLOPs, 3.004% FLOPs, 3, 83, kernel_size=(1, 7, 7), stride=(1, 2, 2), padding=(0, 3, 3), bias=False)
+        (bn_s): BatchNorm3d(0.0 M, 0.000% Params, 0.033 GFLOPs, 0.041% FLOPs, 83, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(0.0 M, 0.000% Params, 0.017 GFLOPs, 0.020% FLOPs, inplace=True)
+        (conv_t): Conv3d(0.016 M, 0.025% Params, 3.198 GFLOPs, 3.924% FLOPs, 83, 64, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+      )
+      (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.026 GFLOPs, 0.032% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (activate): ReLU(0.0 M, 0.000% Params, 0.013 GFLOPs, 0.016% FLOPs, inplace=True)
+    )
+    (maxpool): MaxPool3d(0.0 M, 0.000% Params, 0.013 GFLOPs, 0.016% FLOPs, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), dilation=1, ceil_mode=False)
+    (pool2): MaxPool3d(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, kernel_size=(2, 1, 1), stride=(2, 1, 1), padding=0, dilation=1, ceil_mode=False)
+    (layer1): Sequential(
+      0.666 M, 1.048% Params, 33.482 GFLOPs, 41.078% FLOPs, 
+      (0): BasicBlock3d(
+        0.222 M, 0.349% Params, 11.161 GFLOPs, 13.693% FLOPs, 
+        (conv1): ConvModule(
+          0.111 M, 0.175% Params, 5.58 GFLOPs, 6.846% FLOPs, 
+          (conv): Conv2plus1d(
+            0.111 M, 0.174% Params, 5.571 GFLOPs, 6.834% FLOPs, 
+            (conv_s): Conv3d(0.083 M, 0.131% Params, 4.162 GFLOPs, 5.106% FLOPs, 64, 144, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.000% Params, 0.014 GFLOPs, 0.018% FLOPs, 144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.007 GFLOPs, 0.009% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.028 M, 0.044% Params, 1.387 GFLOPs, 1.702% FLOPs, 144, 64, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.006 GFLOPs, 0.008% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.003 GFLOPs, 0.004% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          0.111 M, 0.175% Params, 5.577 GFLOPs, 6.842% FLOPs, 
+          (conv): Conv2plus1d(
+            0.111 M, 0.174% Params, 5.571 GFLOPs, 6.834% FLOPs, 
+            (conv_s): Conv3d(0.083 M, 0.131% Params, 4.162 GFLOPs, 5.106% FLOPs, 64, 144, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.000% Params, 0.014 GFLOPs, 0.018% FLOPs, 144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.007 GFLOPs, 0.009% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.028 M, 0.044% Params, 1.387 GFLOPs, 1.702% FLOPs, 144, 64, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.006 GFLOPs, 0.008% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.003 GFLOPs, 0.004% FLOPs, inplace=True)
+      )
+      (1): BasicBlock3d(
+        0.222 M, 0.349% Params, 11.161 GFLOPs, 13.693% FLOPs, 
+        (conv1): ConvModule(
+          0.111 M, 0.175% Params, 5.58 GFLOPs, 6.846% FLOPs, 
+          (conv): Conv2plus1d(
+            0.111 M, 0.174% Params, 5.571 GFLOPs, 6.834% FLOPs, 
+            (conv_s): Conv3d(0.083 M, 0.131% Params, 4.162 GFLOPs, 5.106% FLOPs, 64, 144, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.000% Params, 0.014 GFLOPs, 0.018% FLOPs, 144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.007 GFLOPs, 0.009% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.028 M, 0.044% Params, 1.387 GFLOPs, 1.702% FLOPs, 144, 64, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.006 GFLOPs, 0.008% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.003 GFLOPs, 0.004% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          0.111 M, 0.175% Params, 5.577 GFLOPs, 6.842% FLOPs, 
+          (conv): Conv2plus1d(
+            0.111 M, 0.174% Params, 5.571 GFLOPs, 6.834% FLOPs, 
+            (conv_s): Conv3d(0.083 M, 0.131% Params, 4.162 GFLOPs, 5.106% FLOPs, 64, 144, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.000% Params, 0.014 GFLOPs, 0.018% FLOPs, 144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.007 GFLOPs, 0.009% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.028 M, 0.044% Params, 1.387 GFLOPs, 1.702% FLOPs, 144, 64, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.006 GFLOPs, 0.008% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.003 GFLOPs, 0.004% FLOPs, inplace=True)
+      )
+      (2): BasicBlock3d(
+        0.222 M, 0.349% Params, 11.161 GFLOPs, 13.693% FLOPs, 
+        (conv1): ConvModule(
+          0.111 M, 0.175% Params, 5.58 GFLOPs, 6.846% FLOPs, 
+          (conv): Conv2plus1d(
+            0.111 M, 0.174% Params, 5.571 GFLOPs, 6.834% FLOPs, 
+            (conv_s): Conv3d(0.083 M, 0.131% Params, 4.162 GFLOPs, 5.106% FLOPs, 64, 144, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.000% Params, 0.014 GFLOPs, 0.018% FLOPs, 144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.007 GFLOPs, 0.009% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.028 M, 0.044% Params, 1.387 GFLOPs, 1.702% FLOPs, 144, 64, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.006 GFLOPs, 0.008% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.003 GFLOPs, 0.004% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          0.111 M, 0.175% Params, 5.577 GFLOPs, 6.842% FLOPs, 
+          (conv): Conv2plus1d(
+            0.111 M, 0.174% Params, 5.571 GFLOPs, 6.834% FLOPs, 
+            (conv_s): Conv3d(0.083 M, 0.131% Params, 4.162 GFLOPs, 5.106% FLOPs, 64, 144, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.000% Params, 0.014 GFLOPs, 0.018% FLOPs, 144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.007 GFLOPs, 0.009% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.028 M, 0.044% Params, 1.387 GFLOPs, 1.702% FLOPs, 144, 64, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.006 GFLOPs, 0.008% FLOPs, 64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.003 GFLOPs, 0.004% FLOPs, inplace=True)
+      )
+    )
+    (layer2): Sequential(
+      3.335 M, 5.247% Params, 21.794 GFLOPs, 26.738% FLOPs, 
+      (0): BasicBlock3d(
+        0.675 M, 1.063% Params, 5.1 GFLOPs, 6.256% FLOPs, 
+        (conv1): ConvModule(
+          0.222 M, 0.349% Params, 2.227 GFLOPs, 2.732% FLOPs, 
+          (conv): Conv2plus1d(
+            0.221 M, 0.348% Params, 2.224 GFLOPs, 2.729% FLOPs, 
+            (conv_s): Conv3d(0.132 M, 0.208% Params, 1.662 GFLOPs, 2.039% FLOPs, 64, 230, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.001% Params, 0.006 GFLOPs, 0.007% FLOPs, 230, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.003 GFLOPs, 0.004% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.088 M, 0.139% Params, 0.554 GFLOPs, 0.680% FLOPs, 230, 128, kernel_size=(3, 1, 1), stride=(2, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          0.443 M, 0.697% Params, 2.782 GFLOPs, 3.413% FLOPs, 
+          (conv): Conv2plus1d(
+            0.443 M, 0.697% Params, 2.78 GFLOPs, 3.411% FLOPs, 
+            (conv_s): Conv3d(0.332 M, 0.522% Params, 2.081 GFLOPs, 2.553% FLOPs, 128, 288, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.001% Params, 0.004 GFLOPs, 0.004% FLOPs, 288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.111 M, 0.174% Params, 0.694 GFLOPs, 0.851% FLOPs, 288, 128, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (downsample): ConvModule(
+          0.011 M, 0.017% Params, 0.09 GFLOPs, 0.111% FLOPs, 
+          (conv): Conv2plus1d(
+            0.01 M, 0.016% Params, 0.089 GFLOPs, 0.109% FLOPs, 
+            (conv_s): Conv3d(0.003 M, 0.005% Params, 0.043 GFLOPs, 0.053% FLOPs, 64, 54, kernel_size=(1, 1, 1), stride=(1, 2, 2), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.002% FLOPs, 54, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.007 M, 0.011% Params, 0.043 GFLOPs, 0.053% FLOPs, 54, 128, kernel_size=(1, 1, 1), stride=(2, 1, 1), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+      )
+      (1): BasicBlock3d(
+        0.886 M, 1.395% Params, 5.565 GFLOPs, 6.827% FLOPs, 
+        (conv1): ConvModule(
+          0.443 M, 0.697% Params, 2.782 GFLOPs, 3.414% FLOPs, 
+          (conv): Conv2plus1d(
+            0.443 M, 0.697% Params, 2.78 GFLOPs, 3.411% FLOPs, 
+            (conv_s): Conv3d(0.332 M, 0.522% Params, 2.081 GFLOPs, 2.553% FLOPs, 128, 288, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.001% Params, 0.004 GFLOPs, 0.004% FLOPs, 288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.111 M, 0.174% Params, 0.694 GFLOPs, 0.851% FLOPs, 288, 128, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          0.443 M, 0.697% Params, 2.782 GFLOPs, 3.413% FLOPs, 
+          (conv): Conv2plus1d(
+            0.443 M, 0.697% Params, 2.78 GFLOPs, 3.411% FLOPs, 
+            (conv_s): Conv3d(0.332 M, 0.522% Params, 2.081 GFLOPs, 2.553% FLOPs, 128, 288, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.001% Params, 0.004 GFLOPs, 0.004% FLOPs, 288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.111 M, 0.174% Params, 0.694 GFLOPs, 0.851% FLOPs, 288, 128, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+      )
+      (2): BasicBlock3d(
+        0.886 M, 1.395% Params, 5.565 GFLOPs, 6.827% FLOPs, 
+        (conv1): ConvModule(
+          0.443 M, 0.697% Params, 2.782 GFLOPs, 3.414% FLOPs, 
+          (conv): Conv2plus1d(
+            0.443 M, 0.697% Params, 2.78 GFLOPs, 3.411% FLOPs, 
+            (conv_s): Conv3d(0.332 M, 0.522% Params, 2.081 GFLOPs, 2.553% FLOPs, 128, 288, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.001% Params, 0.004 GFLOPs, 0.004% FLOPs, 288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.111 M, 0.174% Params, 0.694 GFLOPs, 0.851% FLOPs, 288, 128, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          0.443 M, 0.697% Params, 2.782 GFLOPs, 3.413% FLOPs, 
+          (conv): Conv2plus1d(
+            0.443 M, 0.697% Params, 2.78 GFLOPs, 3.411% FLOPs, 
+            (conv_s): Conv3d(0.332 M, 0.522% Params, 2.081 GFLOPs, 2.553% FLOPs, 128, 288, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.001% Params, 0.004 GFLOPs, 0.004% FLOPs, 288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.111 M, 0.174% Params, 0.694 GFLOPs, 0.851% FLOPs, 288, 128, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+      )
+      (3): BasicBlock3d(
+        0.886 M, 1.395% Params, 5.565 GFLOPs, 6.827% FLOPs, 
+        (conv1): ConvModule(
+          0.443 M, 0.697% Params, 2.782 GFLOPs, 3.414% FLOPs, 
+          (conv): Conv2plus1d(
+            0.443 M, 0.697% Params, 2.78 GFLOPs, 3.411% FLOPs, 
+            (conv_s): Conv3d(0.332 M, 0.522% Params, 2.081 GFLOPs, 2.553% FLOPs, 128, 288, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.001% Params, 0.004 GFLOPs, 0.004% FLOPs, 288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.111 M, 0.174% Params, 0.694 GFLOPs, 0.851% FLOPs, 288, 128, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          0.443 M, 0.697% Params, 2.782 GFLOPs, 3.413% FLOPs, 
+          (conv): Conv2plus1d(
+            0.443 M, 0.697% Params, 2.78 GFLOPs, 3.411% FLOPs, 
+            (conv_s): Conv3d(0.332 M, 0.522% Params, 2.081 GFLOPs, 2.553% FLOPs, 128, 288, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.001% Params, 0.004 GFLOPs, 0.004% FLOPs, 288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.111 M, 0.174% Params, 0.694 GFLOPs, 0.851% FLOPs, 288, 128, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.0 M, 0.000% Params, 0.002 GFLOPs, 0.002% FLOPs, 128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+      )
+    )
+    (layer3): Sequential(
+      20.41 M, 32.112% Params, 16.437 GFLOPs, 20.165% FLOPs, 
+      (0): BasicBlock3d(
+        2.698 M, 4.246% Params, 2.545 GFLOPs, 3.122% FLOPs, 
+        (conv1): ConvModule(
+          0.885 M, 1.392% Params, 1.111 GFLOPs, 1.363% FLOPs, 
+          (conv): Conv2plus1d(
+            0.884 M, 1.391% Params, 1.11 GFLOPs, 1.362% FLOPs, 
+            (conv_s): Conv3d(0.53 M, 0.834% Params, 0.831 GFLOPs, 1.019% FLOPs, 128, 460, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.001% Params, 0.001 GFLOPs, 0.002% FLOPs, 460, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.001 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.353 M, 0.556% Params, 0.277 GFLOPs, 0.340% FLOPs, 460, 256, kernel_size=(3, 1, 1), stride=(2, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (downsample): ConvModule(
+          0.043 M, 0.067% Params, 0.045 GFLOPs, 0.055% FLOPs, 
+          (conv): Conv2plus1d(
+            0.042 M, 0.066% Params, 0.044 GFLOPs, 0.054% FLOPs, 
+            (conv_s): Conv3d(0.014 M, 0.022% Params, 0.022 GFLOPs, 0.027% FLOPs, 128, 109, kernel_size=(1, 1, 1), stride=(1, 2, 2), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, 109, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.028 M, 0.044% Params, 0.022 GFLOPs, 0.027% FLOPs, 109, 256, kernel_size=(1, 1, 1), stride=(2, 1, 1), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+      )
+      (1): BasicBlock3d(
+        3.542 M, 5.573% Params, 2.778 GFLOPs, 3.409% FLOPs, 
+        (conv1): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+      )
+      (2): BasicBlock3d(
+        3.542 M, 5.573% Params, 2.778 GFLOPs, 3.409% FLOPs, 
+        (conv1): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+      )
+      (3): BasicBlock3d(
+        3.542 M, 5.573% Params, 2.778 GFLOPs, 3.409% FLOPs, 
+        (conv1): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+      )
+      (4): BasicBlock3d(
+        3.542 M, 5.573% Params, 2.778 GFLOPs, 3.409% FLOPs, 
+        (conv1): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+      )
+      (5): BasicBlock3d(
+        3.542 M, 5.573% Params, 2.778 GFLOPs, 3.409% FLOPs, 
+        (conv1): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          1.771 M, 2.787% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+          (conv): Conv2plus1d(
+            1.771 M, 2.786% Params, 1.389 GFLOPs, 1.704% FLOPs, 
+            (conv_s): Conv3d(1.327 M, 2.088% Params, 1.04 GFLOPs, 1.276% FLOPs, 256, 576, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.001 M, 0.002% Params, 0.001 GFLOPs, 0.001% FLOPs, 576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.001% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.442 M, 0.696% Params, 0.347 GFLOPs, 0.425% FLOPs, 576, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+      )
+    )
+    (layer4): Sequential(
+      39.115 M, 61.543% Params, 4.048 GFLOPs, 4.966% FLOPs, 
+      (0): BasicBlock3d(
+        10.79 M, 16.977% Params, 1.272 GFLOPs, 1.560% FLOPs, 
+        (conv1): ConvModule(
+          3.54 M, 5.569% Params, 0.555 GFLOPs, 0.681% FLOPs, 
+          (conv): Conv2plus1d(
+            3.538 M, 5.567% Params, 0.555 GFLOPs, 0.681% FLOPs, 
+            (conv_s): Conv3d(2.122 M, 3.339% Params, 0.416 GFLOPs, 0.510% FLOPs, 256, 921, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.002 M, 0.003% Params, 0.0 GFLOPs, 0.000% FLOPs, 921, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+            (conv_t): Conv3d(1.415 M, 2.226% Params, 0.139 GFLOPs, 0.170% FLOPs, 921, 512, kernel_size=(3, 1, 1), stride=(2, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.002% Params, 0.0 GFLOPs, 0.000% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          7.081 M, 11.141% Params, 0.694 GFLOPs, 0.852% FLOPs, 
+          (conv): Conv2plus1d(
+            7.08 M, 11.140% Params, 0.694 GFLOPs, 0.851% FLOPs, 
+            (conv_s): Conv3d(5.308 M, 8.352% Params, 0.52 GFLOPs, 0.638% FLOPs, 512, 1152, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.002 M, 0.004% Params, 0.0 GFLOPs, 0.000% FLOPs, 1152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+            (conv_t): Conv3d(1.769 M, 2.784% Params, 0.173 GFLOPs, 0.213% FLOPs, 1152, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.002% Params, 0.0 GFLOPs, 0.000% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (downsample): ConvModule(
+          0.17 M, 0.267% Params, 0.022 GFLOPs, 0.027% FLOPs, 
+          (conv): Conv2plus1d(
+            0.169 M, 0.265% Params, 0.022 GFLOPs, 0.027% FLOPs, 
+            (conv_s): Conv3d(0.056 M, 0.088% Params, 0.011 GFLOPs, 0.013% FLOPs, 256, 219, kernel_size=(1, 1, 1), stride=(1, 2, 2), bias=False)
+            (bn_s): BatchNorm3d(0.0 M, 0.001% Params, 0.0 GFLOPs, 0.000% FLOPs, 219, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+            (conv_t): Conv3d(0.112 M, 0.176% Params, 0.011 GFLOPs, 0.013% FLOPs, 219, 512, kernel_size=(1, 1, 1), stride=(2, 1, 1), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.002% Params, 0.0 GFLOPs, 0.000% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+      )
+      (1): BasicBlock3d(
+        14.162 M, 22.283% Params, 1.388 GFLOPs, 1.703% FLOPs, 
+        (conv1): ConvModule(
+          7.081 M, 11.141% Params, 0.694 GFLOPs, 0.852% FLOPs, 
+          (conv): Conv2plus1d(
+            7.08 M, 11.140% Params, 0.694 GFLOPs, 0.851% FLOPs, 
+            (conv_s): Conv3d(5.308 M, 8.352% Params, 0.52 GFLOPs, 0.638% FLOPs, 512, 1152, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.002 M, 0.004% Params, 0.0 GFLOPs, 0.000% FLOPs, 1152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+            (conv_t): Conv3d(1.769 M, 2.784% Params, 0.173 GFLOPs, 0.213% FLOPs, 1152, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.002% Params, 0.0 GFLOPs, 0.000% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          7.081 M, 11.141% Params, 0.694 GFLOPs, 0.852% FLOPs, 
+          (conv): Conv2plus1d(
+            7.08 M, 11.140% Params, 0.694 GFLOPs, 0.851% FLOPs, 
+            (conv_s): Conv3d(5.308 M, 8.352% Params, 0.52 GFLOPs, 0.638% FLOPs, 512, 1152, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.002 M, 0.004% Params, 0.0 GFLOPs, 0.000% FLOPs, 1152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+            (conv_t): Conv3d(1.769 M, 2.784% Params, 0.173 GFLOPs, 0.213% FLOPs, 1152, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.002% Params, 0.0 GFLOPs, 0.000% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+      )
+      (2): BasicBlock3d(
+        14.162 M, 22.283% Params, 1.388 GFLOPs, 1.703% FLOPs, 
+        (conv1): ConvModule(
+          7.081 M, 11.141% Params, 0.694 GFLOPs, 0.852% FLOPs, 
+          (conv): Conv2plus1d(
+            7.08 M, 11.140% Params, 0.694 GFLOPs, 0.851% FLOPs, 
+            (conv_s): Conv3d(5.308 M, 8.352% Params, 0.52 GFLOPs, 0.638% FLOPs, 512, 1152, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.002 M, 0.004% Params, 0.0 GFLOPs, 0.000% FLOPs, 1152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+            (conv_t): Conv3d(1.769 M, 2.784% Params, 0.173 GFLOPs, 0.213% FLOPs, 1152, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.002% Params, 0.0 GFLOPs, 0.000% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (activate): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+        )
+        (conv2): ConvModule(
+          7.081 M, 11.141% Params, 0.694 GFLOPs, 0.852% FLOPs, 
+          (conv): Conv2plus1d(
+            7.08 M, 11.140% Params, 0.694 GFLOPs, 0.851% FLOPs, 
+            (conv_s): Conv3d(5.308 M, 8.352% Params, 0.52 GFLOPs, 0.638% FLOPs, 512, 1152, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (bn_s): BatchNorm3d(0.002 M, 0.004% Params, 0.0 GFLOPs, 0.000% FLOPs, 1152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+            (conv_t): Conv3d(1.769 M, 2.784% Params, 0.173 GFLOPs, 0.213% FLOPs, 1152, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1), padding=(1, 0, 0), bias=False)
+          )
+          (bn): BatchNorm3d(0.001 M, 0.002% Params, 0.0 GFLOPs, 0.000% FLOPs, 512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, inplace=True)
+      )
+    )
+  )
+  (cls_head): I3DHead(
+    0.003 M, 0.005% Params, 0.0 GFLOPs, 0.000% FLOPs, 
+    (loss_cls): CrossEntropyLoss(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, )
+    (dropout): Dropout(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, p=0.5, inplace=False)
+    (fc_cls): Linear(0.003 M, 0.005% Params, 0.0 GFLOPs, 0.000% FLOPs, in_features=512, out_features=6, bias=True)
+    (avg_pool): AdaptiveAvgPool3d(0.0 M, 0.000% Params, 0.0 GFLOPs, 0.000% FLOPs, output_size=(1, 1, 1))
+  )
+)
+==============================
+Input shape: (1, 3, 16, 224, 224)
+Flops: 81.51 GFLOPs
+Params: 63.56 M
+==============================
+
